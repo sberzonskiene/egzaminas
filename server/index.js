@@ -9,6 +9,7 @@ import { cookieParser } from './src/middleware/cookieParser.js';
 import { userData } from './src/middleware/userData.js';
 import { isAdmin } from './src/middleware/isAdmin.js';
 import { isPublic } from './src/middleware/isPublic.js';
+import { getLogout } from './src/api/admin/getLogout.js';
 import { PORT } from './src/env.js';
 
 const app = express();
@@ -36,6 +37,7 @@ app.post('/api/register', isPublic, postPublicRegister);
 app.post('/api/login', isPublic, postPublicLogin);
 
 app.get('/api/login', isAdmin, getLogin);
+app.get('/api/logout', isAdmin, getLogout);
 
 app.get('*error', (req, res) => {
     return res.json({

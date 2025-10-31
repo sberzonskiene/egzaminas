@@ -13,27 +13,27 @@ export function Sidebar() {
                         </li>
                     </ul>
                     <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-3 text-uppercase">
-                        <span>Pavadinimas</span>
+                        <span>Paklausimai/gedimai</span>
                     </h6>
                     <ul className="nav nav-pills flex-column">
                         <li className="nav-item">
                             <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/products/new">
-                                Naujas ###
+                                Naujas paklausimas/gedimas
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/products">
-                                Visi ###
+                                Visi paklausimai/gedimai
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/products/published">
-                                Viešieji ###
+                                Viešieji paklausimai/gedimai
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link d-flex align-items-center gap-2 mb-3 link-dark link-offset-2" to="/admin/products/draft">
-                                Ruošiami ###
+                                Admin paklausimai/gedimai
                             </Link>
                         </li>
                     </ul>
