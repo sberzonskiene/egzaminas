@@ -1,21 +1,21 @@
 import { useContext } from 'react';
 import { Link } from 'react-router';
-import { StoriesContext } from '../../context/stories/StoriesContext';
+import { QuestionsContext } from '../../context/questions/QuestionsContext';
 import { SERVER_ADDRESS } from '../../env';
 
-export function AdminStoriesTableRow({ story }) {
-    const { deletePublicStory, deleteAdminStory } = useContext(StoriesContext);
+export function AdminQuestionsTableRow({ question }) {
+    const { deletePublicQuestion, deleteAdminQuestion } = useContext(QuestionsContext);
 
     function handleDeleteClick() {
-        fetch(SERVER_ADDRESS + '/api/admin/stories/' + story.url_slug, {
+        fetch(SERVER_ADDRESS + '/api/admin/questions/' + question.url_slug, {
             method: 'DELETE',
             credentials: 'include',
         })
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    deletePublicStory(story.url_slug);
-                    deleteAdminStory(story.url_slug);
+                    deletePublicQuestion(question.url_slug);
+                    deleteAdminQuestion(question.url_slug);
                 }
             })
             .catch(console.error);
@@ -23,19 +23,18 @@ export function AdminStoriesTableRow({ story }) {
 
     return (
         <tr>
-            <th>{story.id}</th>
-            <td><Link to={"/admin/stories/" + story.url_slug}>{story.title}</Link></td>
-            <td>{story.url_slug}</td>
-            <td>{story.description}</td>
+            <th>{question.id}</th>
+            <td><Link to={"/admin/questions/" + question.url_slug}>{question.description}</Link></td>
+            <td>{question.url_slug}</td>
             <td>
                 {
-                    story.status_name === 'published'
-                        ? <span className="badge text-bg-success">Viešas</span>
-                        : <span className="badge text-bg-warning">Admin</span>
+                    question.status_name === 'publish'
+                        ?<span className="badge text-bg-success">Išspręstas</span>
+                        : <span className="badge text-bg-warning">Svarstomas</span>
                 }
             </td>
             <td className="d-flex gap-3">
-                <Link className="btn btn-primary btn-sm" to={`/admin/stories/${story.url_slug}/edit`}>Redaguoti</Link>
+                <Link className="btn btn-primary btn-sm" to={`/admin/questions/${question.url_slug}/edit`}>Redaguoti</Link>
                 <button onClick={handleDeleteClick} className="btn btn-danger btn-sm">Ištrinti</button>
             </td>
         </tr>

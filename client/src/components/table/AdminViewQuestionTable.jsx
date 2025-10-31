@@ -18,10 +18,9 @@ export function AdminQuestionTable({ data }) {
                     <td>Statusas</td>
                     <td>
                         {
-                            data.status_name === 'present'
-                                ? <span className="badge text-bg-info">Pateiktas</span>
-                                : <span className="badge text-bg-warning">Svarstomas</span>
-                                || <span className="badge text-bg-succses">Išspręstas</span>                 
+                            data.status_name === 'punlish'
+                                ? <span className="badge text-bg-succses">Išspręstas</span>
+                                : <span className="badge text-bg-warning">Svarstomas</span>                
                         }
 
                     </td>

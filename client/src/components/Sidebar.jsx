@@ -22,17 +22,17 @@ export function Sidebar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answer">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answers">
                                 Visi atsakymai
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answer/published">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answers/published">
                                 Viešieji atsakymai
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 mb-3 link-dark link-offset-2" to="/admin/answer/draft">
+                            <Link className="nav-link d-flex align-items-center gap-2 mb-3 link-dark link-offset-2" to="/admin/answers/draft">
                                 Ruošiami atsakymai
                             </Link>
                         </li>
@@ -46,7 +46,7 @@ export function Sidebar() {
                     </ul>
                     <ul className="nav nav-pills flex-column">
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/questions/new">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/question/new">
                                 Naujas klausimas/skundas
                             </Link>
                         </li>
@@ -56,12 +56,12 @@ export function Sidebar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answer/published">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/questions/published">
                                 Išspręsti klausimai
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 mb-3 link-dark link-offset-2" to="/admin/answer/draft">
+                            <Link className="nav-link d-flex align-items-center gap-2 mb-3 link-dark link-offset-2" to="/admin/questions/draft">
                                 Svarstomi klausimai
                             </Link>
                         </li>

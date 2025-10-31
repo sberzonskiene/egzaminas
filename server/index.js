@@ -9,6 +9,10 @@ import { cookieParser } from './src/middleware/cookieParser.js';
 import { userData } from './src/middleware/userData.js';
 import { isAdmin } from './src/middleware/isAdmin.js';
 import { isPublic } from './src/middleware/isPublic.js';
+import { getAdminQuestions } from './src/api/admin/getQuestions.js';
+import { postAdminQuestions } from './src/api/admin/postQuestions.js';
+import { putAdminQuestions } from './src/api/admin/putQuestions.js';
+import { deleteAdminQuestions } from './src/api/admin/deletequestions.js';
 import { getLogout } from './src/api/admin/getLogout.js';
 import { PORT } from './src/env.js';
 
@@ -38,6 +42,11 @@ app.post('/api/login', isPublic, postPublicLogin);
 
 app.get('/api/login', isAdmin, getLogin);
 app.get('/api/logout', isAdmin, getLogout);
+
+app.get('/api/admin/questions', isAdmin, getAdminQuestions);
+app.post('/api/admin/questions', isAdmin, postAdminQuestions);
+app.put('/api/admin/questions/:original_url', isAdmin, putAdminQuestions);
+app.delete('/api/admin/questions/:url', isAdmin, deleteAdminQuestions);
 
 app.get('*error', (req, res) => {
     return res.json({

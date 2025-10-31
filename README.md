@@ -1,4 +1,5 @@
 # Egzamino projektas
+"Helpdesk" WEB aplikasija
 
 # 🌟 Apie
 Šis projektas skirtas egzamino tikslams. Pasiūlymai dėl pakeitimų laukiami, tačiau pirmenybė suteikiama projekto autoriui! Dėkoju už palaikymą!
@@ -47,13 +48,13 @@ Norite paleisti šį projektą vietoje? Atidarykite terminalą ir vykdykite šiu
 
     npm i helmet
 
-    npm i multer
-
 5. Paleisti serverius
 
     npm run dev
 
 6. Serverio failai: env.development ir env.production git repozitorijoje neviešinami
 
+7. Prisijungimas prie admin dalies: el.paštas: saule@saule.lt
+                                    slaptažodis: saule@saule.lt
 # 🌺 Authors:
 sberzonskiene: Github
