@@ -17,26 +17,55 @@ export function Sidebar() {
                     </h6>
                     <ul className="nav nav-pills flex-column">
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/products/new">
-                                Naujas paklausimas/gedimas
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/help">
+                                Naujas atsakymas
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/products">
-                                Visi paklausimai/gedimai
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answer">
+                                Visi atsakymai
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/products/published">
-                                Viešieji paklausimai/gedimai
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answer/published">
+                                Viešieji atsakymai
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 mb-3 link-dark link-offset-2" to="/admin/products/draft">
-                                Admin paklausimai/gedimai
+                            <Link className="nav-link d-flex align-items-center gap-2 mb-3 link-dark link-offset-2" to="/admin/answer/draft">
+                                Ruošiami atsakymai
                             </Link>
                         </li>
                     </ul>
+                    <ul className="nav nav-pills flex-column">
+                        <li className="nav-item">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark text-decoration-underline link-offset-2" to="/admin">
+                                Klientas
+                            </Link>
+                        </li>
+                    </ul>
+                    <ul className="nav nav-pills flex-column">
+                        <li className="nav-item">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/help">
+                                Naujas klausimas/skundas
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answer">
+                                Visi klausimai
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answer/published">
+                                Išspręsti klausimai
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link d-flex align-items-center gap-2 mb-3 link-dark link-offset-2" to="/admin/answer/draft">
+                                Svarstomi klausimai
+                            </Link>
+                        </li>
+                    </ul>                
                 </div>
             </div>
         </div>

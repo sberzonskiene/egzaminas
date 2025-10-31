@@ -23,8 +23,7 @@ export function Header() {
             </div>
             <ul className="nav col-12 col-md-auto mb-2 justify-content-center  mb-md-0">
                 <li><NavLink to="/" style={navLinkStyles} className="nav-Navlink px-2 Navlink-secondary">Pagrindinis</NavLink>|{" "}</li>
-                <li><NavLink to="/about" style={navLinkStyles} className="nav-Navlink px-2">Klausimai</NavLink>|{" "}</li>
-                <li><NavLink to="/products" style={navLinkStyles} className="nav-Navlink px-2">Produktai</NavLink></li>
+                <li><NavLink to="/questions" style={navLinkStyles} className="nav-Navlink px-2">Klausimai-atsakymai</NavLink>|{" "}</li>
             </ul>
             <div className="col-md-3 text-end">
                  {isLoggedIn ? (

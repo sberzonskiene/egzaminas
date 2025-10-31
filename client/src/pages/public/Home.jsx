@@ -16,7 +16,7 @@ export function HomePage() {
                         most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
                         extensive prebuilt components, and powerful JavaScript plugins.</p>
                 <div className="d-grid gap-2 d-sm-flex justify-content-sm-center"> 
-                    <Link to="#" className="btn btn-info btn-lg px-4 me-sm-3 fw-bold">Custom button</Link>
+                    <Link to="/questions" className="btn btn-info btn-lg px-4 me-sm-3 fw-bold">Klausimai/atsakymai</Link>
                 </div>
                 </div>
             </div>
