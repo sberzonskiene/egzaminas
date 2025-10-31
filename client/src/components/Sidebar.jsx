@@ -17,7 +17,7 @@ export function Sidebar() {
                     </h6>
                     <ul className="nav nav-pills flex-column">
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/help">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answer/new">
                                 Naujas atsakymas
                             </Link>
                         </li>
@@ -46,12 +46,12 @@ export function Sidebar() {
                     </ul>
                     <ul className="nav nav-pills flex-column">
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/help">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/questions/new">
                                 Naujas klausimas/skundas
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/answer">
+                            <Link className="nav-link d-flex align-items-center gap-2 link-dark link-offset-2" to="/admin/questions">
                                 Visi klausimai
                             </Link>
                         </li>
