@@ -1,12 +1,28 @@
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
 
-// import { postRegister } from './src/api/public/postRegister.js';
+import { postPublicRegister } from './src/api/public/postRegister.js';
+import { postPublicLogin } from './src/api/public/postLogin.js';
+import { getLogin } from './src/api/public/getLogin.js';
+import { cookieParser } from './src/middleware/cookieParser.js';
+import { userData } from './src/middleware/userData.js';
+import { isAdmin } from './src/middleware/isAdmin.js';
+import { isPublic } from './src/middleware/isPublic.js';
+import { PORT } from './src/env.js';
 
 const app = express();
 
+app.use(express.static('public'));
 app.use(express.json());
-app.use(cors());
+app.use(helmet());
+app.use(cors({
+    credentials: true,
+    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
+    origin: 'http://localhost:5411',
+}));
+app.use(cookieParser);
+app.use(userData);
 
 app.get('/', (req, res) => {
     return res.json({
@@ -15,12 +31,11 @@ app.get('/', (req, res) => {
     });
 });
 
-// app.post('/api/register', postRegister);
 
-app.use((err, req, res, next) => {
-    console.log(err);
-    return res.status(500).send('Server error');
-});
+app.post('/api/register', isPublic, postPublicRegister);
+app.post('/api/login', isPublic, postPublicLogin);
+
+app.get('/api/login', isAdmin, getLogin);
 
 app.get('*error', (req, res) => {
     return res.json({
@@ -29,6 +44,6 @@ app.get('*error', (req, res) => {
     });
 });
 
-app.listen(5410, () => {
-    console.log(`Server running: http://localhost:5410`);
+app.listen(PORT, () => {
+    console.log(`Server running: http://localhost:${PORT}`);
 });

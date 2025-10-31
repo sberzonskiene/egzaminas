@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router';
+import { HomePage } from './pages/public/Home';
+import { PublicLayout } from './templates/PublicLayout';
+import { NotFoundPage } from './pages/public/NotFound';
+import { RegisterPage } from './pages/public/Register';
+import { LoginPage } from './pages/public/Login';
+import { AdminDasboardPage } from './pages/admin/Dashboard';
+import { AdminLayout } from './templates/AdminLayout';
+import { LogoutPage } from './pages/public/Logout';
+import { UserContextWrapper } from './context/user/UserContextWrapper';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <UserContextWrapper>
+      <BrowserRouter>
+            <Routes>
+              <Route element={<PublicLayout />}>
+                <Route path='/' index element={<HomePage/>} />
+                <Route path='/register' element={<RegisterPage />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/logout' element={<LogoutPage />} />  
+              </Route>
+
+              <Route element={<AdminLayout />}>
+                <Route path='/admin' element={<AdminDasboardPage />} />
+              </Route>
+
+              <Route element={<PublicLayout />}>
+                <Route path='*' element={<NotFoundPage />} />
+              </Route>
+            </Routes>
+      </BrowserRouter>
+    </UserContextWrapper>
+  );
 }
 
-export default App
